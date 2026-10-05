@@ -1,3 +1,4 @@
 {
-    "git.autorefresh": true
+    "git.autorefresh": true,
+    "git.autofetch": true
 }
