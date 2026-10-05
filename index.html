@@ -51,11 +51,11 @@
             max-width: 600px;
         }
 
-        .secret {
+        /*.secret {
             display: none;
             color: #8ab4ff;
             margin-top: 20px;
-        }
+        }*/
 
         .scroll-link {
             margin-top: 30px;
@@ -163,6 +163,45 @@
             section {
                 padding: 70px 20px;
             }
+        }
+
+        /* ---------- SECRET MODE ---------- */
+
+        body.secret-mode {
+            background: #18002b;
+            color: #f5e6ff;
+        }
+
+        body.secret-mode header {
+            background: #250044;
+        }
+
+        body.secret-mode .section-number {
+            color: #b47cff;
+        }
+
+        body.secret-mode .interest {
+            border-color: #6d2ca8;
+        }
+
+        body.secret-mode .interest:hover {
+            border-color: #e0aaff;
+            color: #e0aaff;
+        }
+
+        body.secret-mode a {
+            color: #e0aaff;
+        }
+
+        body.secret-mode footer {
+            border-color: #3b1460;
+        }
+
+        .secret {
+            display: none;
+            color: #e0aaff;
+            margin-top: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -317,7 +356,11 @@
             clicks++;
 
             if (clicks === 5) {
+
+                document.body.classList.add("secret-mode");
+
                 secret.style.display = "block";
+
             }
 
         });
