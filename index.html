@@ -51,6 +51,12 @@
             max-width: 600px;
         }
 
+        .secret {
+            display: none;
+            color: #8ab4ff;
+            margin-top: 20px;
+        }
+
         .scroll-link {
             margin-top: 30px;
             text-decoration: none;
@@ -168,7 +174,12 @@
 
     <header>
 
-        <h1>Ilias Charalampopoulos</h1>
+        <h1 id="secret-trigger"></h1>Ilias Charalampopoulos</h1>
+
+        <p id="secret-message" class="secret">
+            You are the best twin in the world ❤️
+            I love you so much twinn ❤️❤️
+        </p>
 
         <p>
             Welcome to my little corner of the internet.
@@ -294,6 +305,25 @@
         </p>
 
     </footer>
+
+    <script>
+
+        let clicks = 0;
+
+        const name = document.getElementById("secret-trigger");
+        const secret = document.getElementById("secret-message");
+
+        name.addEventListener("click", function() {
+
+            clicks++;
+
+            if (clicks === 5) {
+                secret.style.display = "block";
+            }
+
+        });
+
+    </script>
 
 </body>
 
