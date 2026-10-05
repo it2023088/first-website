@@ -3,104 +3,292 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <!-- Makes the website display properly on phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Personal Website</title>
+    <title>[Your Name] — Personal Website</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: #333;
+        /* ---------- GENERAL ---------- */
+
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #eee;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #8ab4ff;
+        }
+
+
+        /* ---------- HEADER ---------- */
+
         header {
-            background: #f2f2f2;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 40px 20px;
         }
 
         header h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
+            font-size: clamp(48px, 10vw, 100px);
+            margin: 0;
+            letter-spacing: -3px;
         }
 
         header p {
             font-size: 20px;
+            color: #aaa;
+            max-width: 600px;
         }
+
+        .scroll-link {
+            margin-top: 30px;
+            text-decoration: none;
+            border: 1px solid #444;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .scroll-link:hover {
+            background: #eee;
+            color: #111;
+        }
+
+
+        /* ---------- SECTIONS ---------- */
 
         section {
-            max-width: 700px;
+            max-width: 800px;
             margin: auto;
-            padding: 50px 20px;
+            padding: 100px 25px;
         }
 
-        section h2 {
-            font-size: 30px;
+        .section-number {
+            color: #666;
+            font-size: 14px;
+            letter-spacing: 3px;
         }
+
+        h2 {
+            font-size: 42px;
+            margin-top: 5px;
+        }
+
+        .intro {
+            font-size: 21px;
+            color: #ccc;
+        }
+
+
+        /* ---------- INTERESTS ---------- */
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .interest {
+            border: 1px solid #444;
+            padding: 10px 18px;
+            border-radius: 30px;
+            color: #ccc;
+            transition: 0.3s;
+        }
+
+        .interest:hover {
+            transform: translateY(-4px);
+            border-color: #8ab4ff;
+            color: #8ab4ff;
+        }
+
+
+        /* ---------- PROJECTS ---------- */
+
+        .project {
+            border-top: 1px solid #333;
+            padding: 30px 0;
+        }
+
+        .project h3 {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .project p {
+            color: #aaa;
+        }
+
+
+        /* ---------- FOOTER ---------- */
 
         footer {
             text-align: center;
-            padding: 30px;
-            background: #f2f2f2;
+            padding: 60px 20px;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                letter-spacing: -2px;
+            }
+
+            h2 {
+                font-size: 34px;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
         }
     </style>
 </head>
 
+
 <body>
 
+    <!-- HERO -->
+
     <header>
-        <h1>Hello, I'm Ilias Charalampopoulos</h1>
-        <p>Welcome to my little corner of the internet.</p>
+
+        <h1>[Your Name]</h1>
+
+        <p>
+            Welcome to my little corner of the internet.
+        </p>
+
+        <a class="scroll-link" href="#about">
+            Explore ↓
+        </a>
+
     </header>
 
-    <section>
-        <h2>About Me</h2>
 
-        <p>
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-number">01 — ABOUT</div>
+
+        <h2>A little about me.</h2>
+
+        <p class="intro">
             Hi! I'm Ilias Charalampopoulos. This is my first website,
-            and I'm making it as an experiment to learn how
-            websites work.
+            and I'm making it as an experiment to learn
+            how the web works.
         </p>
 
         <p>
-            I'm interested in IT💻, more specifically AI.
+            I'm interested in IT, more specifically AI.
         </p>
+
     </section>
+
+
+    <!-- INTERESTS -->
 
     <section>
-        <h2>Things I Like</h2>
 
-        <p>
-            🎵 Music<br>
-            🎮 Gaming<br>
-            🏎️ Formula1
-        </p>
+        <div class="section-number">02 — INTERESTS</div>
+
+        <h2>Things I like.</h2>
+
+        <div class="interests">
+
+            <!-- Replace these with your interests -->
+
+            <div class="interest">🎵 Music</div>
+            <div class="interest">🎮 Gaming</div>
+            <div class="interest">🏎️ Formula1</div>
+      
+
+        </div>
+
     </section>
+
+
+    <!-- PROJECTS -->
 
     <section>
-        <h2>My Projects</h2>
 
-        <p>
-            I don't have any projects to show yet,
-            but hopefully this website will be the first one!
-        </p>
+        <div class="section-number">03 — PROJECTS</div>
+
+        <h2>Things I've made.</h2>
+
+        <div class="project">
+
+            <h3>01 — This website</h3>
+
+            <p>
+                My first experiment with making something
+                for the internet.
+            </p>
+
+        </div>
+
+        <div class="project">
+
+            <h3>02 — Coming soon...</h3>
+
+            <p>
+                Maybe the next project will go here.
+            </p>
+
+        </div>
+
     </section>
+
+
+    <!-- CONTACT -->
 
     <section>
-        <h2>Contact</h2>
+
+        <div class="section-number">04 — CONTACT</div>
+
+        <h2>Say hello.</h2>
+
+        <p class="intro">
+            If you'd like to get in touch, you can email me:
+        </p>
 
         <p>
-            You can reach me at:
-            <a href="eliashar24@gmail.com">eliashar24@gmail.com</a>
+            <a href="mailto:you@example.com">
+                you@example.com
+            </a>
         </p>
+
     </section>
+
+
+    <!-- FOOTER -->
 
     <footer>
-        <p>© 2026 Ilias Charalampopoulos</p>
+
+        <p>
+            Made by [Your Name] · 2026
+        </p>
+
+        <p>
+            This website is an experiment.
+        </p>
+
     </footer>
 
 </body>
