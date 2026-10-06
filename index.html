@@ -346,6 +346,7 @@
     <script>
 
         let clicks = 0;
+        let secretMode = false;
 
         const name = document.getElementById("secret-trigger");
         const secret = document.getElementById("secret-message");
@@ -356,9 +357,24 @@
 
             if (clicks === 5) {
 
-                document.body.classList.add("secret-mode");
+                secretMode = !secretMode;
 
-                secret.style.display = "block";
+                if (secretMode) {
+
+                    // Turn secret mode ON
+                    document.body.classList.add("secret-mode");
+                    secret.style.display = "block";
+
+                } else {
+
+                    // Turn secret mode OFF
+                    document.body.classList.remove("secret-mode");
+                    secret.style.display = "none";
+
+                }
+
+                // Start counting clicks again
+                clicks = 0;
 
             }
 
