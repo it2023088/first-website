@@ -203,6 +203,43 @@
             margin-top: 20px;
             font-weight: bold;
         }
+
+        /* ---------- SECOND SECRET ---------- */
+
+        .second-secret {
+            text-align: center;
+            padding: 40px 20px 80px;
+        }
+
+        #boo-trigger {
+            background: none;
+            border: none;
+            color: #444;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 12px;
+        }
+
+        #boo-trigger:hover {
+            color: #777;
+        }
+
+        #boo-secret {
+            display: none;
+            margin-top: 30px;
+        }
+
+        #boo-secret img {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        #boo-secret p {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
     </style>
 </head>
 
@@ -329,6 +366,25 @@
     </section>
 
 
+    <!-- SECOND SECRET -->
+
+    <section class="second-secret">
+
+        <button id="boo-trigger" type="button">
+            Click this to win 100💲(100% REAL NO SCAM 🤑)
+        </button>
+
+        <div id="boo-secret">
+
+            <img src="boo.png" alt="A spooky surprise">
+
+            <p>Boo!!!👻 You just got nekouped.png 🫵</p>
+
+        </div>
+
+    </section>
+
+
     <!-- FOOTER -->
 
     <footer>
@@ -377,7 +433,35 @@
                 clicks = 0;
 
             }
+        });
 
+        let booClicks = 0;
+        let booVisible = false;
+
+        const booTrigger = document.getElementById("boo-trigger");
+        const booSecret = document.getElementById("boo-secret");
+
+        booTrigger.addEventListener("click", function() {
+
+            booClicks++;
+
+            if (booClicks === 5) {
+
+                booVisible = !booVisible;
+
+                if (booVisible) {
+
+                    booSecret.style.display = "block";
+
+                } else {
+
+                    booSecret.style.display = "none";
+
+                }
+
+                booClicks = 0;
+
+            }
         });
 
     </script>
